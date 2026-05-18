@@ -1,0 +1,40 @@
+{
+  "name": "millennial-academy-kids",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Production-ready foundation for the MILLENNIAL ACADEMY KIDS digital learning ecosystem.",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace frontend",
+    "dev:frontend": "npm run dev --workspace frontend",
+    "dev:backend": "npm run dev --workspace backend",
+    "build": "npm run build --workspace frontend && npm run build --workspace backend && npm run build --workspace shared",
+    "lint": "npm run lint --workspace frontend && npm run lint --workspace backend",
+    "format": "prettier --write .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,md,css}": [
+      "prettier --write"
+    ],
+    "frontend/**/*.{ts,tsx}": [
+      "npm run lint --workspace frontend"
+    ],
+    "backend/**/*.ts": [
+      "npm run lint --workspace backend"
+    ]
+  },
+  "engines": {
+    "node": ">=20.20.0"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3"
+  }
+}
