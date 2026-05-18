@@ -1,6 +1,6 @@
 {
   "installCommand": "npm install --ignore-scripts",
-  "buildCommand": "npm run --workspace frontend build",
+  "buildCommand": "npm run build:frontend",
   "outputDirectory": "frontend/.next",
   "framework": "nextjs",
   "regions": ["iad1"]
